@@ -224,7 +224,6 @@
                     Background="DarkBlue"
                     Foreground="Aqua"
                     Click="Button_ExitButton_Click"/>
-
             </StackPanel>
 
 
