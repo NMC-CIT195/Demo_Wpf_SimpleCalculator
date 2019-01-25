@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Wpf_SimpleCalculator
+namespace Demo_WPF_SimpleCalculator
 {
     /// <summary>
     /// Interaction logic for HelpWindow.xaml
