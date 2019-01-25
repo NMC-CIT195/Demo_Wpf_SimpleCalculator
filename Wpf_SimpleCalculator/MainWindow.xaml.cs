@@ -56,9 +56,11 @@ namespace Demo_WPF_SimpleCalculator
             double volume = 0;
             double shapeMultiplier = 1;
             string shape = ComboBox_Shape.SelectionBoxItem as string;
-            string userFeedback;
 
-            if (ValidInputs(out userFeedback))
+            //
+            // only calculate and display volume if all inputs are valid
+            //
+            if (ValidInputs(out string userFeedback))
             {
                 volume =
                     Convert.ToDouble(TextBox_Length.Text) *
@@ -98,6 +100,9 @@ namespace Demo_WPF_SimpleCalculator
             bool validInputs = true;
             userFeedback = "";
 
+            //
+            // set bool value and build out the user feedback message
+            //
             if (!double.TryParse(TextBox_Length.Text, out double tempLength))
             {
                 validInputs = false;
