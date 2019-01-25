@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_SimpleCalculator"
         mc:Ignorable="d"
-        Background="Aqua"
+        Background="PowderBlue"
         WindowStartupLocation="CenterScreen"
-        Title="Cubic Volume" 
+        Title="Cubic Volume of Prisms" 
         Height="400" 
         Width="600">
     
     <Window.Resources>
+        <!--Source: https://www.kailashsblogs.com/2017/01/round-corner-textbox-in-wpf.html-->
         <ControlTemplate
             x:Key="RoundTextboxCornerTemplate"
             TargetType="{x:Type TextBoxBase}">
@@ -48,7 +49,6 @@
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-
             <Label
                 Grid.Row="0"
                 Grid.Column="0"
@@ -57,25 +57,30 @@
                 VerticalAlignment="Center"
                 FontSize="24"
                 Foreground="DarkBlue"
+                FontWeight="Bold"
                 />
-
             <StackPanel
                 Grid.Row="0"
                 Grid.Column="1"
-                Margin="10"
-                Orientation="Vertical"
-                HorizontalAlignment="Center">
+                Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
                 <RadioButton 
                     x:Name="RadioButton_Feet"
                     Content="Feet" 
+                    Margin="10"
                     IsChecked="True"
+                    FontSize="16"
+                    Foreground="DarkBlue"
                     Checked="RadioButton_Units_Checked"/>
                 <RadioButton 
                     x:Name="RadioButton_Meters"
                     Content="Meters"
+                    Margin="10"
+                    FontSize="16"
+                    Foreground="DarkBlue"
                     Checked="RadioButton_Units_Checked"/>
             </StackPanel>
-
             <Grid
                 Grid.Row="1"
                 Grid.Column="0">
@@ -108,8 +113,9 @@
                     Height="30"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
-                    Template="{StaticResource RoundTextboxCornerTemplate}"                 
-                    LostFocus="TextBox_Length_LostFocus"/>
+                    VerticalContentAlignment="Center"
+                    Padding="5,0,0,0"
+                    Template="{StaticResource RoundTextboxCornerTemplate}"/>
                 <Label
                     x:Name="Label_Width"
                     Grid.Row="1"
@@ -128,8 +134,9 @@
                     Height="30"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
-                    Template="{StaticResource RoundTextboxCornerTemplate}"                 
-                    LostFocus="TextBox_Width_LostFocus"/>
+                    VerticalContentAlignment="Center"
+                    Padding="5,0,0,0"
+                    Template="{StaticResource RoundTextboxCornerTemplate}"/>
                 <Label
                     x:Name="Label_Height"
                     Grid.Row="2"
@@ -148,16 +155,20 @@
                     Height="30"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
-                    Template="{StaticResource RoundTextboxCornerTemplate}"                 
-                    LostFocus="TextBox_Height_LostFocus"/>
+                    VerticalContentAlignment="Center"
+                    Padding="5,0,0,0"
+                    Template="{StaticResource RoundTextboxCornerTemplate}"/>
                 <StackPanel
-                        Grid.Row="3"
-                        Grid.Column="0">
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    VerticalAlignment="Center">
                     <ComboBox
                         x:Name="ComboBox_Shape"
+                        Height="30"
+                        VerticalContentAlignment="Center"
                         Margin="10">
-                        <ComboBoxItem Content="Rectangular Prism" Selector.IsSelected="tr"/>
-                        <ComboBoxItem Content="Pyramid"/>
+                        <ComboBoxItem Content="Rectangular Prism" IsSelected="true"/>
+                        <ComboBoxItem Content="Pyramidal Prism"/>
                     </ComboBox>
 
                 </StackPanel>
@@ -191,19 +202,20 @@
                     Height="30"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Padding="5,0,0,0"
                     Template="{StaticResource RoundTextboxCornerTemplate}"                 
                     IsReadOnly="True"/>
 
             </Grid>
-
             <StackPanel
                 Grid.Row="1"
                 Grid.Column="1"
                 Orientation="Vertical">
                 <Image
-                    Width="100"
+                    Width="200"
                     Height="100"
-                    Source="Images/Capture.JPG"/>
+                    Source="Images/cuboid.gif"/>
                 <Button 
                     x:Name="Button_HelpButton"
                     Width="100"
@@ -225,8 +237,6 @@
                     Foreground="Aqua"
                     Click="Button_ExitButton_Click"/>
             </StackPanel>
-
-
         </Grid>
     </Grid>
 </Window>

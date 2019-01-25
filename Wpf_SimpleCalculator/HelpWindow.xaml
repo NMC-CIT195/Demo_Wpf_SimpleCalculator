@@ -5,11 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_SimpleCalculator"
         mc:Ignorable="d"
-        Title="HelpWindow" Height="300" Width="300">
-    <Grid>
-        <Button x:Name="Button_ExitButton"
+        Title="Help Topics" 
+        Height="300" 
+        Width="300"
+        Background="PowderBlue"
+        Foreground="DarkBlue"
+        WindowStartupLocation="CenterOwner">
+    <StackPanel
+        Margin="20,0,20,0">
+        <Label
+            Content="Instructions"
+            Margin="10"
+            HorizontalAlignment="Center"
+            FontSize="16"
+            FontWeight="Bold"
+            Foreground="DarkBlue"/>
+        <TextBlock
+            Text="1) Choose the desired units."
+            Margin="5"
+            TextWrapping="Wrap"/>
+        <TextBlock
+            Text="2) Input numeric values for Length, Width, and Height."
+            Margin="5"
+            TextWrapping="Wrap"/>
+        <TextBlock
+            Text="3) Choose the shape."
+            Margin="5"
+            TextWrapping="Wrap"/>
+        <TextBlock
+            Text="4) Click  &quot;Calculate&quot;."
+            Margin="5"
+            TextWrapping="Wrap"/>
+        <Button
+            x:Name="Button_ExitButton"
             Content="Exit"
-            Width="75" Click="Button_ExitButton_Click" Margin="104,219,114.6,32.4"/>
-
-    </Grid>
+            Width="75" 
+            Height="30"
+            Margin="10"
+            Background="DarkBlue"
+            Foreground="PowderBlue"
+            Click="Button_ExitButton_Click"/>
+    </StackPanel>
 </Window>
